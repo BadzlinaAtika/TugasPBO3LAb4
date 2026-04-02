@@ -1,0 +1,47 @@
+package edu.university.staff;
+
+public class Pegawai {
+    protected String nama;
+    protected double gajiPokok;
+
+    public Pegawai(String nama, double gajiPokok) {
+        this.nama = nama;
+        this.gajiPokok = gajiPokok;
+    }
+
+    public double hitungGaji() {
+        return gajiPokok;
+    }
+
+    public String getNama() {
+        return nama;
+    }
+}
+
+class Dosen extends Pegawai {
+    private int jumlahSKS;
+
+    public Dosen(String nama, double gajiPokok, int jumlahSKS) {
+        super(nama, gajiPokok);
+        this.jumlahSKS = jumlahSKS;
+    }
+
+    @Override
+    public double hitungGaji() {
+        return gajiPokok + (jumlahSKS * 150000);
+    }
+}
+
+class StafAdministrasi extends Pegawai {
+    private int jamLembur;
+
+    public StafAdministrasi(String nama, double gajiPokok, int jamLembur) {
+        super(nama, gajiPokok);
+        this.jamLembur = jamLembur;
+    }
+
+    @Override
+    public double hitungGaji() {
+        return gajiPokok + (jamLembur * 50000);
+    }
+}
