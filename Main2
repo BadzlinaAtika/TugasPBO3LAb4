@@ -1,0 +1,26 @@
+package edu.university.staff;
+
+public class Main {
+    public static void main(String[] args) {
+        // 1. Buat array bertipe Pegawai
+        Pegawai[] daftarPegawai = new Pegawai[4];
+
+        // 2. Isi array dengan objek Dosen dan Staf Administrasi
+        daftarPegawai[0] = new Dosen("Dr. Andri", 5000000, 10);
+        daftarPegawai[1] = new Dosen("Dr. Dewi", 5000000, 8);
+        daftarPegawai[2] = new StafAdministrasi("Rara", 3000000, 5);
+        daftarPegawai[3] = new StafAdministrasi("Budi", 3000000, 10);
+
+
+        System.out.printf("%-20s | %-18s | %-15s\n", "NAMA", "JABATAN", "TOTAL GAJI");
+
+        for (Pegawai p : daftarPegawai) {
+            String jabatan = p.getClass().getSimpleName();
+
+            System.out.printf("%-20s | %-18s | Rp %,.0f\n",
+                    p.getNama(),
+                    jabatan,
+                    p.hitungGaji());
+        }
+    }
+}
