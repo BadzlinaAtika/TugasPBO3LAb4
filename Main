@@ -1,1 +1,19 @@
+package edu.university.main.model;
 
+public class Main {
+    public static void main(String[] args) {
+        EduUniversity m1 = new EduUniversity("22001", "Badzlina", 3.8);
+        EduUniversity m2 = new EduUniversity("22002", "Atika", 3.9);
+        EduUniversity m3 = new EduUniversity("22003", "Salsa", 4.0);
+
+        EduUniversity[] daftar = {m1, m2, m3};
+
+
+        System.out.printf("%-7s | %-10s | %-5s | %-15s\n", "NIM", "NAMA", "IPK", "KATEGORI");
+
+        for (EduUniversity m : daftar) {
+            System.out.printf("%-7s | %-10s | %-5.2f | %-15s\n",
+                    m.getNim(), m.getNama(), m.getIpk(), m.getKategoriIPK());
+        }
+    }
+}
